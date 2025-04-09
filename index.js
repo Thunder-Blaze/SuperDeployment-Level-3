@@ -1,15 +1,15 @@
 const express = require('express');
 const sqlite3 = require('sqlite3').verbose();
 const dotenv = require('dotenv');
-const fs = require('fs');
+// const fs = require('fs');
 const app = express();
 
 app.use(express.json());
 dotenv.config();
 
-if (!fs.existsSync('./db')) {
-    fs.mkdirSync('./db', { recursive: true });
-}
+// if (!fs.existsSync('./db')) {
+//     fs.mkdirSync('./db', { recursive: true });
+// }
 
 const db = new sqlite3.Database('./db/todos.db', (err) => {
     if (err) {
